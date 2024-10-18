@@ -6,9 +6,12 @@ pipeline{
             steps{
                 bat 'npm install'
             }
-            stage("run app")
-            {
-                bat 'npm run start'
+            stage("run app"){
+                steps{
+            
+                 bat 'npm run start'
+            
+                }
             }
           }
         }
