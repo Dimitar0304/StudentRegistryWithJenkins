@@ -2,9 +2,12 @@ pipeline{
     agent any
         stages
         {
-            stage("Message"){
+            stage("Checkout"){
             steps{
-                echo 'Hello World'
+                checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/main']], // Replace 'main' with your branch name if different
+                    userRemoteConfigs: [[url: 'https://github.com/your-username/your-repo.git']]
             }
           }
         }
