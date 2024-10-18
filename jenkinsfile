@@ -14,6 +14,8 @@ pipeline{
                         bat 'npm audit'
                     }
                 }
+            }
+           }
              stage('Execute tests') {
                     steps {
                         bat 'npm test'
