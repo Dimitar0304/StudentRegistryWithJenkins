@@ -2,12 +2,9 @@ pipeline{
     agent any
         stages
         {
-            stage("Checkout"){
+            stage("Npm Install"){
             steps{
-                checkout
-                    $class: 'GitSCM', 
-                    branches: [[name: '*/main']], // Replace 'main' with your branch name if different
-                    userRemoteConfigs: [[url: 'https://github.com/your-username/your-repo.git']]
+                bat 'npm install'
             }
           }
         }
